@@ -23,7 +23,9 @@ var sio = require('../')
 module.exports = {
 
   'test that protocol version is present': function (done) {
-    sio.protocol.should.be.a('number');
+    if (typeof sio.protocol !== 'number') {
+      throw "Error()"
+    };
     done();
   },
 

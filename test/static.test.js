@@ -233,7 +233,9 @@ module.exports = {
 
       data.should.match(/XMLHttpRequest/);
       var static = io.static;
-      static.cache['/socket.io.js'].content.should.match(/XMLHttpRequest/);
+      if (!/XMLHttpRequest/.test(static.cache['/socket.io.js'].content) {
+        throw "Error()"
+      };
 
       cl.get('/socket.io/socket.io.js', function (res, data) {
         res.headers['content-type'].should.eql('application/javascript');

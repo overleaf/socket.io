@@ -29,3 +29,18 @@ profile:
 	@PROFILEFLAGS='--prof --trace-opt --trace-bailout --trace-deopt' $(MAKE) bench
 
 .PHONY: test bench profile
+
+ol_init:
+	docker run \
+		--rm \
+		-v ${PWD}:/app \
+		-w /app \
+		node:0.12 npm i
+
+ol_run:
+	docker run \
+ 		--rm \
+ 		-v ${PWD}:/app \
+ 		-w /app \
+ 		-e NODE_TLS_REJECT_UNAUTHORIZED=0 \
+ 		node:0.12 make test
