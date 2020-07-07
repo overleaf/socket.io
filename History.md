@@ -1,3 +1,11 @@
+0.9.19-overleaf-1 / 2020-07-07
+=====================
+
+ * Overleaf: fix frame parsing for websocket protocol hybi-16
+    https://github.com/overleaf/issues/issues/2017
+ * Overleaf: fix parser issues
+    https://github.com/overleaf/issues/issues/3050
+ * Overleaf: use a custom socket.io-client version 0.9.17-overleaf-1
 
 0.9.19 / 2017-05-16
 ===================
