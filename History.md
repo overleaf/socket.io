@@ -1,3 +1,9 @@
+0.9.19-overleaf-2 / 2020-07-08
+=====================
+
+* Overleaf: fix EventEmitter usage in 'policyfile' dependency
+    https://github.com/overleaf/real-time/pull/66
+
 0.9.19-overleaf-1 / 2020-07-07
 =====================
 
