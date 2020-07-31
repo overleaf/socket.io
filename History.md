@@ -1,3 +1,9 @@
+0.9.19-overleaf-3 / 2020-07-30
+==============================
+
+ * Overleaf: bump socket.io-client version to `0.9.17-overleaf-2`
+    https://github.com/overleaf/socket.io-client/pull/2
+
 0.9.19-overleaf-2 / 2020-07-08
 =====================
 
