@@ -1,3 +1,8 @@
+0.9.19-overleaf-5 / 2021-05-19
+==============================
+
+ * Overleaf: prevent exception in client.transport getter
+
 0.9.19-overleaf-4 / 2020-07-30
 ==============================
 
