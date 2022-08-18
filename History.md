@@ -1,3 +1,8 @@
+0.9.19-overleaf-6 / 2022-08-18
+==============================
+
+* Overleaf: only convert the current message to a string once the last fragment has been received
+
 0.9.19-overleaf-5 / 2021-05-19
 ==============================
 
