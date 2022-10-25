@@ -1,3 +1,13 @@
+0.9.19-overleaf-8 / 2022-08-18
+==============================
+
+* Overleaf: removes dependency on socket.io-client, requests for socket.io.js must be served from the top-level app
+
+0.9.19-overleaf-7 / 2022-08-18
+==============================
+
+* Overleaf: updates this package to use the latest version of our fork of the socket.io-client library (0.9.17-overleaf-4)
+
 0.9.19-overleaf-6 / 2022-08-18
 ==============================
 
