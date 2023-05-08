@@ -506,7 +506,7 @@ var WebSocket = function(url, proto, opts) {
             var data = undefined;
 
             return function(req, s, head) {
-                req.socket.setNoDelay(true);
+                if (req.socket) req.socket.setNoDelay(true);
                 stream = s;
 
                 if (readyState == CLOSED) {

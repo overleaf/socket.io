@@ -1,3 +1,8 @@
+0.9.19-overleaf-10 / 2023-04-25
+===============================
+
+* Overleaf: Add support for Node 18 by gracefully handling `req.socket == null`.
+
 0.9.19-overleaf-9 / 2022-08-18
 ==============================
 
