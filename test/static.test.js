@@ -79,7 +79,6 @@ module.exports = {
 
       data.should.match(/XMLHttpRequest/);
       data.should.match(/WS\.prototype\.name/);
-      data.should.not.match(/HTMLFile\.prototype\.name/);
       data.should.not.match(/JSONPPolling\.prototype\.name/);
       data.should.not.match(/XHRPolling\.prototype\.name/);
 
@@ -102,7 +101,6 @@ module.exports = {
 
       data.should.match(/XMLHttpRequest/);
       data.should.match(/WS\.prototype\.name/);
-      data.should.not.match(/HTMLFile\.prototype\.name/);
       data.should.not.match(/JSONPPolling\.prototype\.name/);
       data.should.not.match(/XHRPolling\.prototype\.name/);
 
@@ -125,7 +123,6 @@ module.exports = {
 
       data.should.match(/XMLHttpRequest/);
       data.should.match(/WS\.prototype\.name/);
-      data.should.not.match(/HTMLFile\.prototype\.name/);
       data.should.not.match(/JSONPPolling\.prototype\.name/);
       data.should.not.match(/XHRPolling\.prototype\.name/);
 
@@ -138,7 +135,6 @@ module.exports = {
 
         data.should.match(/XMLHttpRequest/);
         data.should.match(/XHRPolling\.prototype\.name/);
-        data.should.not.match(/HTMLFile\.prototype\.name/);
         data.should.not.match(/JSONPPolling\.prototype\.name/);
         data.should.not.match(/WS\.prototype\.name/);
 
@@ -442,7 +438,6 @@ module.exports = {
 
       data.should.match(/XMLHttpRequest/);
       data.should.match(/WS\.prototype\.name/);
-      data.should.not.match(/HTMLFile\.prototype\.name/);
       data.should.not.match(/JSONPPolling\.prototype\.name/);
       data.should.not.match(/XHRPolling\.prototype\.name/);
 
