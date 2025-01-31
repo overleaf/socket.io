@@ -329,7 +329,7 @@ Configuration in socket.io is TJ-style:
 var io = require('socket.io').listen(80);
 
 io.configure(function () {
-  io.set('transports', ['websocket', 'flashsocket', 'xhr-polling']);
+  io.set('transports', ['websocket', 'xhr-polling']);
 });
 
 io.configure('development', function () {

@@ -27,8 +27,6 @@ module.exports = {
     (!!io.static.has('/socket.io.v1.0.0.js')).should.be.true;
     (!!io.static.has('/socket.io+xhr-polling.js')).should.be.true;
     (!!io.static.has('/socket.io+xhr-polling.v1.0.0.js')).should.be.true;
-    (!!io.static.has('/static/flashsocket/WebSocketMain.swf')).should.be.true;
-    (!!io.static.has('/static/flashsocket/WebSocketMainInsecure.swf')).should.be.true;
 
     process.nextTick(function() {
       io.server.close();
@@ -81,7 +79,6 @@ module.exports = {
 
       data.should.match(/XMLHttpRequest/);
       data.should.match(/WS\.prototype\.name/);
-      data.should.not.match(/Flashsocket\.prototype\.name/);
       data.should.not.match(/HTMLFile\.prototype\.name/);
       data.should.not.match(/JSONPPolling\.prototype\.name/);
       data.should.not.match(/XHRPolling\.prototype\.name/);
@@ -105,7 +102,6 @@ module.exports = {
 
       data.should.match(/XMLHttpRequest/);
       data.should.match(/WS\.prototype\.name/);
-      data.should.not.match(/Flashsocket\.prototype\.name/);
       data.should.not.match(/HTMLFile\.prototype\.name/);
       data.should.not.match(/JSONPPolling\.prototype\.name/);
       data.should.not.match(/XHRPolling\.prototype\.name/);
@@ -129,7 +125,6 @@ module.exports = {
 
       data.should.match(/XMLHttpRequest/);
       data.should.match(/WS\.prototype\.name/);
-      data.should.not.match(/Flashsocket\.prototype\.name/);
       data.should.not.match(/HTMLFile\.prototype\.name/);
       data.should.not.match(/JSONPPolling\.prototype\.name/);
       data.should.not.match(/XHRPolling\.prototype\.name/);
@@ -143,7 +138,6 @@ module.exports = {
 
         data.should.match(/XMLHttpRequest/);
         data.should.match(/XHRPolling\.prototype\.name/);
-        data.should.not.match(/Flashsocket\.prototype\.name/);
         data.should.not.match(/HTMLFile\.prototype\.name/);
         data.should.not.match(/JSONPPolling\.prototype\.name/);
         data.should.not.match(/WS\.prototype\.name/);
@@ -370,72 +364,6 @@ module.exports = {
     });
   },
 
-  'test that the WebSocketMain.swf is served': function (done) {
-    var port = ++ports
-      , io = sio.listen(port)
-      , cl = client(port);
-
-    cl.get('/socket.io/static/flashsocket/WebSocketMain.swf', function (res, data) {
-      res.headers['content-type'].should.eql('application/x-shockwave-flash');
-      res.headers['content-length'].should.match(/([0-9]+)/);
-      should.strictEqual(res.headers.etag, undefined);
-
-      var static = io.static
-        , cache = static.cache['/static/flashsocket/WebSocketMain.swf'];
-
-      Buffer.isBuffer(cache.content).should.be.true;
-
-      cl.end();
-      io.server.close();
-      done();
-    });
-  },
-
-  'test that the WebSocketMainInsecure.swf is served': function (done) {
-    var port = ++ports
-      , io = sio.listen(port)
-      , cl = client(port);
-
-    cl.get('/socket.io/static/flashsocket/WebSocketMainInsecure.swf', function (res, data) {
-      res.headers['content-type'].should.eql('application/x-shockwave-flash');
-      res.headers['content-length'].should.match(/([0-9]+)/);
-      should.strictEqual(res.headers.etag, undefined);
-
-      var static = io.static
-        , cache = static.cache['/static/flashsocket/WebSocketMainInsecure.swf'];
-
-      Buffer.isBuffer(cache.content).should.be.true;
-
-      cl.end();
-      io.server.close();
-      done();
-    });
-  },
-
-  'test that swf files are not served with gzip': function (done) {
-    var port = ++ports
-      , io = sio.listen(port)
-      , cl = client(port);
-
-    io.enable('browser client gzip');
-
-    cl.get('/socket.io/static/flashsocket/WebSocketMain.swf', {
-          headers: {
-              'accept-encoding': 'deflate, gzip'
-          }
-        }
-      , function (res, data) {
-          res.headers['content-type'].should.eql('application/x-shockwave-flash');
-          res.headers['content-length'].should.match(/([0-9]+)/);
-          should.strictEqual(res.headers['content-encoding'], undefined);
-
-          cl.end();
-          io.server.close();
-          done();
-        }
-    );
-  },
-
   'test that you can serve custom clients': function (done) {
     var port = ++ports
       , io = sio.listen(port)
@@ -514,7 +442,6 @@ module.exports = {
 
       data.should.match(/XMLHttpRequest/);
       data.should.match(/WS\.prototype\.name/);
-      data.should.not.match(/Flashsocket\.prototype\.name/);
       data.should.not.match(/HTMLFile\.prototype\.name/);
       data.should.not.match(/JSONPPolling\.prototype\.name/);
       data.should.not.match(/XHRPolling\.prototype\.name/);
