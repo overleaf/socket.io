@@ -1,8 +1,7 @@
 0.9.19-overleaf-11 / 2025-01-24
 ===============================
 
-* Overleaf: Overhaul origins option to allow a regex, function, string or boolean, or an array of any mix of these
-* Overleaf: Change origins option default to disallow any origin
+* Overleaf: Extend origins option to allow a function
 * Overleaf: Remove htmlfile transport
 * Overleaf: Remove flashsocket transport
 
