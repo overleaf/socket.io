@@ -1,3 +1,10 @@
+0.9.19-overleaf-11 / 2025-01-24
+===============================
+
+* Overleaf: Extend origins option to allow a function
+* Overleaf: Remove htmlfile transport
+* Overleaf: Remove flashsocket transport
+
 0.9.19-overleaf-10 / 2023-04-25
 ===============================
 

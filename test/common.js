@@ -129,7 +129,7 @@ HTTPClient.prototype.get = function (path, opts, fn) {
   opts.method = 'GET';
 
   // override the parser for transport requests
-  if (/\/(xhr-polling|htmlfile|jsonp-polling)\//.test(path)) {
+  if (/\/(xhr-polling|jsonp-polling)\//.test(path)) {
     // parser that might be necessary for transport-specific framing
     var transportParse = opts.parse;
     opts.parse = function (data) {
