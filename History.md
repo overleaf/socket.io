@@ -1,3 +1,8 @@
+0.9.19-overleaf-12 / 2025-05-12
+===============================
+
+* Overleaf: Allow `origins` function to handle cases where there is no origin/referer
+
 0.9.19-overleaf-11 / 2025-01-24
 ===============================
 
